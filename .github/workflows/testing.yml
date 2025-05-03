@@ -1,12 +1,13 @@
 name: Demo Workflow
 on: workflow_dispatch
 jobs:
-    print:
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: Print one line
-              run: echo Hello GitHub actions!
-            - name: Print few lines
-              run: |
-                  echo first line
-                  echo second line
+            - name: Get source code
+            - uses: actions/checkout@v4
+              # run: echo Hello GitHub actions!
+            - name: Install dependencies
+              run: npm ci
+            - name: Test application
+              run: npm run test
