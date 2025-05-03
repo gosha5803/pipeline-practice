@@ -5,4 +5,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: print PR context
-              run: echo "${{ github }}"
+              # Через объект github можно получить доступ к переменным конекста.
+              run: echo "${{ toJSON(github) }}"
