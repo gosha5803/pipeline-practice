@@ -1,0 +1,12 @@
+name: Demo Workflow
+on: workflow-dispatch
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print one line
+              run: echo Hello GitHub actions!
+            - name: Print few lines
+              run: |
+                  echo first line
+                  echo second line
