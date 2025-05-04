@@ -1,0 +1,17 @@
+name: Build
+on: [push, workflow_dispatch]
+jobs:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Get source code
+          uses: actions/checkout@v4
+        - name: Install deps
+          run: npm ci
+        - name: Build project
+          run: npm run build
+        - name: Upload artifact
+          uses: actions/upload-artifact@v4
+          with:
+              path: build
+              name: build-files
+# Артифакты чтобы получить доступ до файлов репы
