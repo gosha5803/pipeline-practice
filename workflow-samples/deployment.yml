@@ -3,6 +3,8 @@ on:
     push:
         branches:
             - "master"
+        # paths-ignore:
+        #  значение пути изменения по которым, ghActions будет игнорировать и не запускать джобы
 jobs:
     deploy:
         runs-on: ubuntu-latest
